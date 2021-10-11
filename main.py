@@ -77,7 +77,7 @@ async def main():
         build_status_icon = "🔴"
     else:
         logging.warning(f"Unknown build status '{conf_drone_stage_status}'.")
-        build_status_message = f"Unknown"
+        build_status_message = f"unknown"
         build_status_icon = "⚪️"
 
     message = f"""
