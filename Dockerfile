@@ -6,4 +6,4 @@ RUN rm /tmp/requirements.txt
 
 COPY ./main.py /usr/local/bin/drone-matrix
 
-ENTRYPOINT ["python", "-um", "/usr/local/bin/drone-matrix"]
+ENTRYPOINT ["python", "-u", "/usr/local/bin/drone-matrix"]
