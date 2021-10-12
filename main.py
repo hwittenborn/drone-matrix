@@ -20,7 +20,7 @@ for i in ["USERNAME", "HOMESERVER", "PASSWORD", "ROOM"]:
         missing_env_vars = True
 
 for i in ["DRONE_REPO", "DRONE_BRANCH", "DRONE_COMMIT_SHA", "DRONE_COMMIT_LINK",
-          "DRONE_STAGE_STATUS", "DRONE_SYSTEM_PROTO", "DRONE_SYSTEM_HOST", "DRONE_BUILD_NUMBER"]:
+          "DRONE_BUILD_STATUS", "DRONE_SYSTEM_PROTO", "DRONE_SYSTEM_HOST", "DRONE_BUILD_NUMBER"]:
     if env.get(i) is None:
         logging.error(f"{i} isn't set")
         missing_env_vars = True
@@ -38,7 +38,7 @@ conf_drone_repo = env["DRONE_REPO"]
 conf_drone_branch = env["DRONE_BRANCH"]
 conf_drone_commit_sha = env["DRONE_COMMIT_SHA"]
 conf_drone_commit_link = env["DRONE_COMMIT_LINK"]
-conf_drone_stage_status = env["DRONE_STAGE_STATUS"]
+conf_drone_stage_status = env["DRONE_BUILD_STATUS"]
 
 conf_drone_system_proto = env["DRONE_SYSTEM_PROTO"]
 conf_drone_system_host = env["DRONE_SYSTEM_HOST"]
