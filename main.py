@@ -19,7 +19,7 @@ for i in ["USERNAME", "HOMESERVER", "PASSWORD", "ROOM"]:
         logging.error(f"{i} isn't set")
         missing_env_vars = True
 
-for i in ["DRONE_REPO", "DRONE_BRANCH", "DRONE_COMMIT_SHA", "DRONE_COMMIT_LINK", "DRONE_COMMIT_MESSAGE"
+for i in ["DRONE_REPO", "DRONE_BRANCH", "DRONE_COMMIT_SHA", "DRONE_COMMIT_LINK", "DRONE_COMMIT_MESSAGE",
           "DRONE_BUILD_STATUS", "DRONE_SYSTEM_PROTO", "DRONE_SYSTEM_HOST", "DRONE_BUILD_NUMBER"]:
     if env.get(i) is None:
         logging.error(f"{i} isn't set")
