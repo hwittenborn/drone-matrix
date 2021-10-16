@@ -19,7 +19,7 @@ for i in ["USERNAME", "HOMESERVER", "PASSWORD", "ROOM"]:
         logging.error(f"{i} isn't set")
         missing_env_vars = True
 
-for i in ["DRONE_REPO", "DRONE_BRANCH", "DRONE_COMMIT_SHA", "DRONE_COMMIT_LINK",
+for i in ["DRONE_REPO", "DRONE_BRANCH", "DRONE_COMMIT_SHA", "DRONE_COMMIT_LINK", "DRONE_COMMIT_MESSAGE"
           "DRONE_BUILD_STATUS", "DRONE_SYSTEM_PROTO", "DRONE_SYSTEM_HOST", "DRONE_BUILD_NUMBER"]:
     if env.get(i) is None:
         logging.error(f"{i} isn't set")
@@ -38,6 +38,7 @@ conf_drone_repo = env["DRONE_REPO"]
 conf_drone_branch = env["DRONE_BRANCH"]
 conf_drone_commit_sha = env["DRONE_COMMIT_SHA"]
 conf_drone_commit_link = env["DRONE_COMMIT_LINK"]
+conf_drone_commit_message = env["DRONE_COMMIT_MESSAGE"]
 conf_drone_stage_status = env["DRONE_BUILD_STATUS"]
 
 conf_drone_system_proto = env["DRONE_SYSTEM_PROTO"]
@@ -82,6 +83,7 @@ async def main():
 
     message = f"""
                **{conf_drone_repo}** [#{conf_drone_build_number}]({conf_drone_system_proto}://{conf_drone_system_host}/{conf_drone_repo}/{conf_drone_build_number})   
+               Message: {conf_drone_commit_message}   
                Branch: {conf_drone_branch}   
                Commit: [{conf_drone_commit_sha}]({conf_drone_commit_link})   
                Status: {build_status_message} {build_status_icon}
