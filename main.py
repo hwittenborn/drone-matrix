@@ -45,6 +45,9 @@ conf_drone_system_proto = env["DRONE_SYSTEM_PROTO"]
 conf_drone_system_host = env["DRONE_SYSTEM_HOST"]
 conf_drone_build_number = env["DRONE_BUILD_NUMBER"]
 
+# Get title of commit message.
+conf_drone_commit_message = conf_drone_commit_message.split("\n\n")[0]
+
 # Start actually doing stuff.
 async def main():
     client = nio.AsyncClient(conf_homeserver, conf_username)
